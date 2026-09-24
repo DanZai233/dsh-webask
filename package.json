@@ -1,0 +1,65 @@
+{
+  "name": "dsh-webask",
+  "version": "0.1.0",
+  "description": "Send one-liner questions to DeepSeek's web chat instead of burning your DSH context. Composer button + global hotkey palette, with history.",
+  "license": "MIT",
+  "author": "DanZai233",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "token-saving",
+    "context-window",
+    "client-ui",
+    "chat",
+    "offload",
+    "web-chat"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanZai233/dsh-webask.git"
+  },
+  "homepage": "https://github.com/DanZai233/dsh-webask#readme",
+  "bugs": {
+    "url": "https://github.com/DanZai233/dsh-webask/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "src/client.js",
+    "src/style.css",
+    "build.mjs",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "prepack": "node build.mjs",
+    "verify": "node scripts/verify.mjs"
+  }
+}

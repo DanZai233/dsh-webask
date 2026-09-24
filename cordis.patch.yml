@@ -1,0 +1,8 @@
+# dsh-webask — composition patch.
+#
+# Pure insert rows only. A pure insert keeps the plugin hot-mountable from a
+# plugin market: the host gains one composition entry and no shipped row is
+# touched, so nothing beyond the install itself needs a restart.
+- insert:
+    - id: dsh-webask
+      name: 'dsh-webask'
