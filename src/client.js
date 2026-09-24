@@ -1057,7 +1057,7 @@ const registrations = [
 
 exports.name = "dsh-webask";
 
-exports.inject = ["slots"];
+exports.inject = ["slots", "locale"];
 
 exports.apply = function apply(ctx) {
   ensureStyles();
